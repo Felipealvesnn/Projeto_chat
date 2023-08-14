@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Pages/Loading_page.dart';
+import 'Pages/auth_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,13 +20,13 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.deepPurple,
           ),
           colorScheme: ColorScheme.fromSwatch().copyWith(
-             primary: Colors.deepPurple,
+             primary: Colors.indigo,
              background: Colors.white,
              secondary: Colors.white,
              ),
           useMaterial3: true,
        ),
-      home: const Loading_page(),
+      home: const Auth_page(),
       debugShowCheckedModeBanner: false,
     );
   }
