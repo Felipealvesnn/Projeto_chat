@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_chat/core/services/auth/auth_mock.dart';
 
 import '../components/auth_form.dart';
 import '../core/models/auth_form_data.dart';
+import '../core/services/auth/auth_service.dart';
 
 class Auth_page extends StatefulWidget {
   const Auth_page({super.key});
@@ -15,14 +17,25 @@ class _Auth_pageState extends State<Auth_page> {
 
   Future<void> _handleSubmit(Auth_form_data data) async {
     try {
-      setState(() {
-        _isLoading = true;
-        if (data.islogin) {
-          //login
-        } else {
-          //signup
-        }
-      });
+      setState(() => _isLoading = true);
+
+      if (data.islogin) {
+        //login
+
+        await AuthService().login(
+          data.email,
+          data.password,
+        );
+      } else {
+        //signup
+
+        await AuthService().signup(
+          data.email,
+          data.password,
+          data.name,
+          data.image,
+        );
+      }
     } catch (error) {
       print(error);
     } finally {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Pages/Loading_page.dart';
+import 'Pages/auth_or_app_page.dart';
 import 'Pages/auth_page.dart';
 
 void main() {
@@ -16,17 +17,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          appBarTheme: AppBarTheme(
-            backgroundColor: Colors.deepPurple,
-          ),
-          colorScheme: ColorScheme.fromSwatch().copyWith(
-             primary: Colors.indigo,
-             background: Colors.white,
-             secondary: Colors.white,
-             ),
-          useMaterial3: true,
-       ),
-      home: const Auth_page(),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.deepPurple,
+        ),
+      ),
+      home: const Auth_or_app_page(),
       debugShowCheckedModeBanner: false,
     );
   }
