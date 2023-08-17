@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:projeto_chat/components/user_image_picker.dart';
 
-import '../models/auth_form_data.dart';
+import '../core/models/auth_form_data.dart';
 
 class Auth_form extends StatefulWidget {
   final Future<void> Function(Auth_form_data) submitfn;
