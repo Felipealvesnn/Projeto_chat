@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:projeto_chat/core/models/ChatMessages.dart';
 import 'package:projeto_chat/core/services/chat/chat_service.dart';
 
 class Mensages extends StatelessWidget {
@@ -6,18 +9,35 @@ class Mensages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder(
+    return StreamBuilder<List<ChatMessages>>(
       stream: Chat_service().messages,
       builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(
+            child: Text('Error: ${snapshot.error}'),
+          );
+        }
+        if (!snapshot.hasData) {
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+        final messages = snapshot.data!;
         return ListView.builder(
-          itemCount: null,
+          reverse: true,
+          itemCount: messages.length,
           itemBuilder: (context, index) {
+            final message = messages[index];
             return ListTile(
-              title: Text(snapshot.data![index].userName),
-              subtitle: Text(snapshot.data![index].text),
+              leading: CircleAvatar(
+                child: Text(message.userName),
+              ),
+              title: Text(message.userName),
+              subtitle: Text(message.text),
             );
           },
         );
+
       },
     );
   }
