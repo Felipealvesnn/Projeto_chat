@@ -13,7 +13,7 @@ class Chat_mock_service implements Chat_service {
       userName: 'bia',
       text: 'Teste',
       createdAt: DateTime.now(),
-      userId: '0',
+      userId: '6',
     ),
      ChatMessages(
       id: '1',
