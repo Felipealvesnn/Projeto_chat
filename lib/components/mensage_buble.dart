@@ -9,16 +9,21 @@ class Mensage_buble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: isMe ? Colors.grey[300] : Colors.red[300],
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(12),
-          topRight: Radius.circular(12),
-          bottomLeft: isMe ? Radius.circular(12) : Radius.circular(0),
-          bottomRight: isMe ? Radius.circular(0) : Radius.circular(12),
+    return Row(
+      mainAxisAlignment: isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
+      children:[ Container(
+        decoration: BoxDecoration(
+          color: isMe ? Colors.grey[300] : Colors.red[300],
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(12),
+            topRight: Radius.circular(12),
+            bottomLeft: isMe ? Radius.circular(12) : Radius.circular(0),
+            bottomRight: isMe ? Radius.circular(0) : Radius.circular(12),
+          ),
         ),
-      ),
-      child: Text(message.text));
+        width: 180,
+        child: Text(message.text)),
+      ]
+    );
   }
 }
