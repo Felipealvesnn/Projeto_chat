@@ -8,14 +8,14 @@ import 'package:projeto_chat/core/services/chat/chat_service.dart';
 import 'mensage_buble.dart';
 
 class Mensages extends StatelessWidget {
-  const Mensages({super.key});
+  const Mensages({Key? key});
 
   @override
   Widget build(BuildContext context) {
     final currentUser = AuthService().currentUser;
 
     return StreamBuilder<List<ChatMessages>>(
-      stream: Chat_service().messages,
+      stream: Chat_service().messages, // Usar ChatService com "C" maiúsculo
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(
@@ -34,9 +34,17 @@ class Mensages extends StatelessWidget {
           itemBuilder: (context, index) {
             final message = messages[index];
             final isMe = message.userId == currentUser!.id;
-            return Mensage_buble(
+            final modifiedMessage = ChatMessages( // Renomear message2 para modifiedMessage
+              createdAt: DateTime.now(),
+              id: message.id,
+              text: message.text,
+              userId: message.userId,
+              userName: message.userName,
+              userImageURL: currentUser.ImageUrl,
+            );
+            return Mensage_buble( // Renomear Mensage_buble para MensageBuble
               key: ValueKey(message.id),
-              message: message,
+              message: isMe ? modifiedMessage : message,
               isMe: isMe,
             );
           },

@@ -22,12 +22,11 @@ class Chat_page extends StatelessWidget {
                   value: 0,
                   child: Text("lOUGOUT"),
                 ),
-              
               ];
             }, onSelected: (value) {
               if (value == 0) {
                 AuthService().logout();
-              } 
+              }
             }),
           ],
         ),
@@ -36,6 +35,9 @@ class Chat_page extends StatelessWidget {
           children: [
             Expanded(
               child: Mensages(),
+            ),
+            SizedBox(
+              height: 9,
             ),
             New_meseges(),
           ],

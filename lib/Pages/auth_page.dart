@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_chat/core/services/auth/auth_mock.dart';
 
 import '../components/auth_form.dart';
 import '../core/models/auth_form_data.dart';
