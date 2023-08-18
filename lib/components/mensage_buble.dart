@@ -66,7 +66,9 @@ class Mensage_buble extends StatelessWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: isMe ? Colors.black : Colors.white,
+                          
                         ),
+                        textAlign: isMe ? TextAlign.end : TextAlign.start,
                       ),
                       Text(message.text),
                     ],
