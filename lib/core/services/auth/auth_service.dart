@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:projeto_chat/core/models/Chat_user.dart';
 import 'package:projeto_chat/core/services/auth/auth_mock.dart';
 
+import 'auth_mock_fireBase.dart';
+
 abstract class AuthService {
   Chat_user? get currentUser;
   Stream<Chat_user?> get userChanges;
@@ -16,6 +18,6 @@ abstract class AuthService {
   Future<void> logout();
 
   factory AuthService() {
-    return AuthMockServices();
+    return AuthMockServicesFirebase();
   }
 }
