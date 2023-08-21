@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "972596154864",
+    "project_id": "projeto-chat-coder",
+    "storage_bucket": "projeto-chat-coder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972596154864:android:dfe0915355356662cb4d35",
+        "android_client_info": {
+          "package_name": "br.com.felipe.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972596154864-b663sgje3argl3j62p177gq59eopgaft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC5NBIC_4i3qc6b5GPmPNrWu6i-lcvaas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972596154864-b663sgje3argl3j62p177gq59eopgaft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

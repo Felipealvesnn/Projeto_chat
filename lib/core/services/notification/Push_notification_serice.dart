@@ -7,13 +7,17 @@ class ChatNofication_service with ChangeNotifier{
 
   List<Chat_notification> get itens => [..._itens];
 
+  int get total => _itens.length;
+  void get reset => _itens.clear();
+
   void add(Chat_notification item) {
     _itens.add(item);
     notifyListeners();
   }
 
-  void remove(int item) {
-    _itens.removeAt(item);
+
+  void remove(Chat_notification item) {
+    _itens.remove(item);
     notifyListeners();
   }
   
