@@ -37,7 +37,7 @@ class _Auth_pageState extends State<Auth_page> {
       }
     } catch (error) {
       print(error);
-    } finally {
+    } finally { 
       setState(() {
         _isLoading = false;
       });
