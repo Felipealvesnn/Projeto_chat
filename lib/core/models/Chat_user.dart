@@ -11,4 +11,15 @@ class Chat_user {
       required this.name,
       required this.email,
        this.ImageUrl});
+
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'password': password,
+      'email': email,
+      'ImageUrl': ImageUrl,
+    };
+  }
 }
