@@ -86,12 +86,12 @@ class AuthMockServicesFirebase implements AuthService {
     return await uploadTask.ref.getDownloadURL();
   }
 
-  static Chat_user _tochatUser(User user) {
+  static Chat_user _tochatUser(User user,[String? imageUrl]) {
     return Chat_user(
       id: user.uid,
       name: user.displayName ?? '',
       email: user.email ?? '',
-      ImageUrl: user.photoURL ?? '',
+      ImageUrl: imageUrl ?? user.photoURL ?? '',
     );
   }
 }
